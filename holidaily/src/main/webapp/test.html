@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoliDaily | Daily Word Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js" defer></script>
+</head>
+    <body>
+<form method="post" action="api/tools/addpuzzle">
+  Start <input name="start" value="GHOST"><br>
+  Goal <input name="goal" value="CANDY"><br>
+  Theme <input name="theme" value="Halloween"><br>
+  Steps <input name="steps" value="5"><br>
+  <button type="submit">Add puzzle</button>
+</form>
+</body></html>

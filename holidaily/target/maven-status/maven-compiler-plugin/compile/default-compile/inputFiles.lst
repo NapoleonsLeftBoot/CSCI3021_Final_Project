@@ -1,3 +1,11 @@
-/home/mlingibs/Documents/csci3021/CSCI3021_Final_Project/holidaily/src/main/java/com/mycompany/holidaily/servlet/QueryServlet.java
-/home/mlingibs/Documents/csci3021/CSCI3021_Final_Project/holidaily/src/main/java/com/mycompany/holidaily/resources/JakartaEE8Resource.java
-/home/mlingibs/Documents/csci3021/CSCI3021_Final_Project/holidaily/src/main/java/com/mycompany/holidaily/JakartaRestConfiguration.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\servlet\DictionaryCheckServlet.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\servlet\LoginServlet.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\servlet\ProfanityCheckServlet.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\JakartaRestConfiguration.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\servlet\QueryServlet.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\model\Puzzle.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\dao\WordDAO.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\dao\PuzzleDAO.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\util\DBUtil.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\resources\JakartaEE8Resource.java
+C:\Users\bb711\Desktop\Class\CSCI3021_Final_Project\holidaily\src\main\java\com\mycompany\holidaily\servlet\AddUserPuzzleServlet.java

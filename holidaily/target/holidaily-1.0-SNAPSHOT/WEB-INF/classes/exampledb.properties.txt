@@ -1,0 +1,10 @@
+Make a db.properties file and put it into Other sources/ src/main/resources
+Then DBUtil.java will pull the info from here when accessing the database
+
+
+Also the url is still local since the course server is still
+not up. Also change port number as needed for your setup
+
+db.url=jdbc:mysql://localhost:3306/holidaily
+db.user=username is here
+db.password=password go here

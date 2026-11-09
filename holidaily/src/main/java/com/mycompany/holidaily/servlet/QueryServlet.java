@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+//testing file to check database is working
 package com.mycompany.holidaily.servlet;
 
+import com.mycompany.holidaily.dao.WordDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -17,52 +15,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "QueryServlet", urlPatterns = {"/QueryServlet"})
+@ WebServlet 
+
+        (name = "QueryServlet", urlPatterns = {"/QueryServlet"})
 public class QueryServlet extends HttpServlet {
 
-    private static final String URL  = "jdbc:mysql://localhost:3306/holidaily";
-    private static final String USER = "durn";
-    private static final String PASS = "Charmander123564";
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head><title>Puzzles</title></head>");
-            out.println("<body>");
-            out.println("<h1>Puzzles</h1>");
-            out.println("<table border='1'>");
-            out.println("<tr><th>ID</th><th>Start</th><th>End</th><th>Theme ID</th>"
-                      + "<th>Difficulty</th><th>Ladder Length</th></tr>");
-
+            out.println("<html><body>");
+            out.println("<h1>WordDAO test</h1>");
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
-                     Statement stmt = conn.createStatement();
-                     ResultSet rs = stmt.executeQuery("SELECT * FROM puzzles")) {
-
-                    while (rs.next()) {
-                        out.println("<tr>"
-                            + "<td>" + rs.getInt("id") + "</td>"
-                            + "<td>" + rs.getString("start_word") + "</td>"
-                            + "<td>" + rs.getString("end_word") + "</td>"
-                            + "<td>" + rs.getInt("theme_id") + "</td>"
-                            + "<td>" + rs.getInt("difficulty_score") + "</td>"
-                            + "<td>" + rs.getInt("ladder_length") + "</td>"
-                            + "</tr>");
-                    }
-                }
-            } catch (ClassNotFoundException | SQLException e) {
-                out.println("<tr><td colspan='6'>Database error: " + e.getMessage() + "</td></tr>");
+                WordDAO dao = new WordDAO();
+                out.println("<p>GHOST valid: " + dao.isValidWord("GHOST") + "</p>");
+                out.println("<p>ZZZZZ valid: " + dao.isValidWord("ZZZZZ") + "</p>");
+                out.println("<p>XXXXX blocked: " + dao.isBlockedWord("XXXXX") + "</p>");
+            } catch (SQLException e) {
+                out.println("<p>Database error: " + e.getMessage() + "</p>");
             }
-
-            out.println("</table>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("</body></html>");
         }
-    }
+  
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

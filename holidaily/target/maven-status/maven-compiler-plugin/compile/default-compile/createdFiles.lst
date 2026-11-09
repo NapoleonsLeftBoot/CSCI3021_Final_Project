@@ -1,0 +1,11 @@
+com\mycompany\holidaily\servlet\AddUserPuzzleServlet.class
+com\mycompany\holidaily\servlet\LoginServlet.class
+com\mycompany\holidaily\servlet\ProfanityCheckServlet.class
+com\mycompany\holidaily\model\Puzzle.class
+com\mycompany\holidaily\util\DBUtil.class
+com\mycompany\holidaily\dao\WordDAO.class
+com\mycompany\holidaily\servlet\DictionaryCheckServlet.class
+com\mycompany\holidaily\JakartaRestConfiguration.class
+com\mycompany\holidaily\servlet\QueryServlet.class
+com\mycompany\holidaily\dao\PuzzleDAO.class
+com\mycompany\holidaily\resources\JakartaEE8Resource.class
