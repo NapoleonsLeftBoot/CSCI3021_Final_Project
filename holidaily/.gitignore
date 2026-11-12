@@ -1,1 +1,15 @@
+# Maven and Eclipse generated files
+target/
+bin/
+.classpath
+.project
+.settings/
+.metadata/
+
+# Local credentials
 src/main/resources/db.properties
+.env
+*.env
+
+# Generated web manifest
+src/main/webapp/META-INF/MANIFEST.MF

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HoliDaily Agent Test</title>
+</head>
+<body>
+
+    <h1>HoliDaily AI Agent Test</h1>
+
+    <p>
+        Enter a goal for Gemini.
+        The agent will select one available tool.
+    </p>
+
+    <form id="agentForm">
+        <label for="goal">User goal:</label>
+
+        <input
+            type="text"
+            id="goal"
+            size="65"
+            value="Check if GHOST and WITCH are valid dictionary words."
+            required
+        >
+
+        <button type="submit">Run Agent</button>
+    </form>
+
+    <h2>Agent Result</h2>
+    <pre id="output">No result yet.</pre>
+
+    <script>
+        document.getElementById("agentForm")
+            .addEventListener("submit", async function(event) {
+
+                event.preventDefault();
+
+                const goal =
+                    document.getElementById("goal").value;
+
+                const output =
+                    document.getElementById("output");
+
+                output.textContent = "Running agent...";
+
+                try {
+                    const response = await fetch("api/agent", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        credentials: "same-origin",
+                        body: JSON.stringify({
+                            goal: goal
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    output.textContent =
+                        JSON.stringify(data, null, 2);
+
+                } catch (error) {
+                    output.textContent =
+                        "Request failed: " + error.message;
+                }
+            });
+    </script>
+
+</body>
+</html>
