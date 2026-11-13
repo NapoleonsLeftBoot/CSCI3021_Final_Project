@@ -39,8 +39,7 @@ public class AgentServlet extends HttpServlet {
             return;
         }
 
-        String username =
-                String.valueOf(session.getAttribute("userId"));
+        int userId = (Integer) session.getAttribute("userId");
 
         // Step 2: Accept the goal from a form or JSON.
         String goal;
@@ -129,7 +128,7 @@ public class AgentServlet extends HttpServlet {
         // Step 5: Log the actual call and its result.
         try {
             logDAO.logToolCall(
-                    username,
+                    userId,
                     toolName,
                     args.toString(),
                     observation.toString());

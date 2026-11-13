@@ -23,7 +23,9 @@ public class LoginServlet extends HttpServlet {
                     + "\"error\":\"Invalid user\"}");
             return;
         }
-        request.getSession(true).setAttribute("userId", user);
+        
+        int userId = Integer.parseInt(user);
+        request.getSession(true).setAttribute("userId", userId);
         response.getWriter().print("{\"success\":true}");
     }
 }

@@ -6,7 +6,7 @@ import java.sql.*;
 public class AgentLogDAO {
 
     public void logToolCall(
-            String username,
+            int userId,
             String toolName,
             String input,
             String output) throws SQLException {
@@ -17,17 +17,12 @@ public class AgentLogDAO {
 
         try (Connection conn = DBUtil.getConnection()) {
 
-            Integer userId = findUserId(conn, username);
 
             try (PreparedStatement ps =
                     conn.prepareStatement(sql)) {
 
-                if (userId == null) {
-                    ps.setNull(1, Types.INTEGER);
-                } else {
-                    ps.setInt(1, userId);
-                }
 
+                ps.setInt(1, userId);
                 ps.setString(2, toolName);
                 ps.setString(3, input);
                 ps.setString(4, output);
