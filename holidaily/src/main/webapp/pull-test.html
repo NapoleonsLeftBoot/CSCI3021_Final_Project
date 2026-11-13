@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoliDaily | Daily Word Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js" defer></script>
+</head>
+     <body>
+        <script>
+            fetch('QueryServlet')
+                .then(response => response.text())
+                .then(data => {
+                    document.body.innerHTML = data;
+                });
+        </script>
+    </body>
+</html>
