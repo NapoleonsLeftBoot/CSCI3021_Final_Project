@@ -1,10 +1,14 @@
 package com.mycompany.holidaily.dao;
 
 import com.mycompany.holidaily.util.DBUtil;
+import static com.mycompany.holidaily.util.DBUtil.getConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WordDAO {
 
@@ -44,4 +48,22 @@ public class WordDAO {
             }
         }
     }
+    
+    
+    public List<String> getAllWords() throws SQLException {
+    List<String> words = new ArrayList<>();
+
+    String sql = "SELECT word FROM words";
+
+    try (Connection conn = getConnection();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+
+        while (rs.next()) {
+            words.add(rs.getString("word"));
+        }
+    }
+
+    return words;
+}
 }

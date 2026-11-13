@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,18 +22,22 @@ import javax.servlet.http.HttpServletResponse;
         (name = "QueryServlet", urlPatterns = {"/QueryServlet"})
 public class QueryServlet extends HttpServlet {
 
-        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("<!DOCTYPE html>");
-            out.println("<html><body>");
-            out.println("<h1>WordDAO test</h1>");
-            try {
-                WordDAO dao = new WordDAO();
-                out.println("<p>GHOST valid: " + dao.isValidWord("GHOST") + "</p>");
-                out.println("<p>ZZZZZ valid: " + dao.isValidWord("ZZZZZ") + "</p>");
-                out.println("<p>XXXXX blocked: " + dao.isBlockedWord("XXXXX") + "</p>");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html><body>");
+        out.println("<h1>Database -> Servlet -> Webpage</h1>");
+        try {
+            WordDAO dao = new WordDAO();
+
+            out.println("<h2>Words pulled from Database</h2>");
+            
+            List<String> words = dao.getAllWords();
+            for (String word : words) {
+                out.println("<p>" + word + "</p>");
+            }
             } catch (SQLException e) {
                 out.println("<p>Database error: " + e.getMessage() + "</p>");
             }
