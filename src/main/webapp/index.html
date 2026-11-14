@@ -1,50 +1,150 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="homecss.css">
-    </head>
-    <body>
-        <h1>Wordle(...ish) (TO BE ADAPTED)</h1>
-        <form>
-          <table>
-            <tr>
-              <td><label for="input1">Word 1 Letter 1:</label><input type="text" id="input1" name="input1" maxlength="1" pattern="[pP]" placeholder=" "></td>
-              <td><label for="input2">Word 1 Letter 2:</label><input type="text" id="input2" name="input2" maxlength="1" pattern="[rR]" placeholder=" "></td>
-              <td><label for="input3">Word 1 Letter 3:</label><input type="text" id="input3" name="input3" maxlength="1" pattern="[oO]" placeholder=" "></td>
-              <td><label for="input4">Word 1 Letter 4:</label><input type="text" id="input4" name="input4" maxlength="1" pattern="[uU]" placeholder=" "></td>
-              <td><label for="input5">Word 1 Letter 5:</label><input type="text" id="input5" name="input5" maxlength="1" pattern="[dD]" placeholder=" "></td>
-            </tr>
-            <tr>
-              <td><label for="input6">Word 2 Letter 1:</label><input type="text" id="input6" name="input6" maxlength="1" pattern="[pP]" placeholder=" "></td>
-              <td><label for="input7">Word 2 Letter 2:</label><input type="text" id="input7" name="input7" maxlength="1" pattern="[rR]" placeholder=" "></td>
-              <td><label for="input8">Word 2 Letter 3:</label><input type="text" id="input8" name="input8" maxlength="1" pattern="[oO]" placeholder=" "></td>
-              <td><label for="input9">Word 2 Letter 4:</label><input type="text" id="input9" name="input9" maxlength="1" pattern="[uU]" placeholder=" "></td>
-              <td><label for="input10">Word 2 Letter 5:</label><input type="text" id="input10" name="input10" maxlength="1" pattern="[dD]" placeholder=" "></td>
-            </tr>
-            <tr>
-              <td><label for="input11">Word 3 Letter 1:</label><input type="text" id="input11" name="input11" maxlength="1" pattern="[pP]" placeholder=" "></td>
-              <td><label for="input12">Word 3 Letter 2:</label><input type="text" id="input12" name="input12" maxlength="1" pattern="[rR]" placeholder=" "></td>
-              <td><label for="input13">Word 3 Letter 3:</label><input type="text" id="input13" name="input13" maxlength="1" pattern="[oO]" placeholder=" "></td>
-              <td><label for="input14">Word 3 Letter 4:</label><input type="text" id="input14" name="input14" maxlength="1" pattern="[uU]" placeholder=" "></td>
-              <td><label for="input15">Word 3 Letter 5:</label><input type="text" id="input15" name="input15" maxlength="1" pattern="[dD]" placeholder=" "></td>
-            </tr>
-            <tr>
-              <td><label for="input16">Word 4 Letter 1:</label><input type="text" id="input16" name="input16" maxlength="1" pattern="[pP]" placeholder=" "></td>
-              <td><label for="input17">Word 4 Letter 2:</label><input type="text" id="input17" name="input17" maxlength="1" pattern="[rR]" placeholder=" "></td>
-              <td><label for="input18">Word 4 Letter 3:</label><input type="text" id="input18" name="input18" maxlength="1" pattern="[oO]" placeholder=" "></td>
-              <td><label for="input19">Word 4 Letter 4:</label><input type="text" id="input19" name="input19" maxlength="1" pattern="[uU]" placeholder=" "></td>
-              <td><label for="input20">Word 4 Letter 5:</label><input type="text" id="input20" name="input20" maxlength="1" pattern="[dD]" placeholder=" "></td>
-            </tr>
-            <tr>
-              <td><label for="input21">Word 5 Letter 1:</label><input type="text" id="input21" name="input21" maxlength="1" pattern="[pP]" placeholder=" "></td>
-              <td><label for="input22">Word 5 Letter 2:</label><input type="text" id="input22" name="input22" maxlength="1" pattern="[rR]" placeholder=" "></td>
-              <td><label for="input23">Word 5 Letter 3:</label><input type="text" id="input23" name="input23" maxlength="1" pattern="[oO]" placeholder=" "></td>
-              <td><label for="input24">Word 5 Letter 4:</label><input type="text" id="input24" name="input24" maxlength="1" pattern="[uU]" placeholder=" "></td>
-              <td><label for="input25">Word 5 Letter 5:</label><input type="text" id="input25" name="input25" maxlength="1" pattern="[dD]" placeholder=" "></td>
-            </tr>
-          </table>
-        </form>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoliDaily | Daily Word Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">HoliDaily</a>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="#puzzle">Daily Puzzle</a>
+        </nav>
+    </header>
+
+    <main class="puzzle-page">
+        <section class="puzzle-intro">
+            <p class="eyebrow">A new challenge every day</p>
+            <h1>Today's Word Ladder</h1>
+            <p>Connect the starting word to the destination by changing one letter at a time.</p>
+        </section>
+
+        <section class="puzzle-layout" id="puzzle">
+
+            <aside class="holiday-card">
+                <div class="calendar-icon">
+                    <div class="calendar-top"></div>
+                    <div class="calendar-date">05</div>
+                    <div class="calendar-month">NOV</div>
+                </div>
+
+                <p class="holiday-label">Today's Holiday</p>
+                <h2>ITSADAY</h2>
+                <p class="holiday-date">November 5, 2026</p>
+            </aside>
+
+            <section class="puzzle-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Daily Challenge</h2>
+                        <p class="section-subtitle">Complete the ladder to solve today's puzzle.</p>
+                    </div>
+                </div>
+
+                <div class="puzzle-card">
+                    <div class="puzzle-directions">
+                        <h3>How it works</h3>
+                        <p>
+                            Fill in each row with a five-letter word.
+                            Each new word must differ from the word above it
+                            by exactly one letter.
+                        </p>
+                    </div>
+
+                    <div class="word-ladder">
+                        <div class="word-row fixed-row" aria-label="Starting word: CROWN">
+                            <div class="letter-box start-letter">C</div>
+                            <div class="letter-box start-letter">R</div>
+                            <div class="letter-box start-letter">O</div>
+                            <div class="letter-box start-letter">W</div>
+                            <div class="letter-box start-letter">N</div>
+                        </div>
+
+                        <form id="ladder-form" autocomplete="off">
+                            <div id="answer-rows"></div>
+
+                            <button type="submit" id="submit-word" class="button primary-button">
+                                Submit Word
+                            </button>
+                        </form>
+
+                        <div class="word-row fixed-row" aria-label="Destination word: DROPS">
+                            <div class="letter-box goal-letter">D</div>
+                            <div class="letter-box goal-letter">R</div>
+                            <div class="letter-box goal-letter">O</div>
+                            <div class="letter-box goal-letter">P</div>
+                            <div class="letter-box goal-letter">S</div>
+                        </div>
+                    </div>
+
+                    <p id="game-message" class="game-message" aria-live="polite">
+                        Enter your first word to begin!
+                    </p>
+
+                    <div class="puzzle-footer">
+                        <span>Change one letter per row.</span>
+                        <span id="attempt-counter">Attempts: 0</span>
+                    </div>
+
+                    <button type="button" id="reset-game" class="reset-button">
+                        Reset Puzzle
+                    </button>
+                    <button type="button" id="add-puzzle" class="button primary-button">
+                        Add Puzzle
+                    </button>
+
+                    <!-- Add Puzzle Form ** -->
+                    <div id="add-puzzle-container" class="add-puzzle-container" hidden>
+                        <form id="add-puzzle-form">
+                            <h3>Create a New Puzzle</h3>
+
+                            <label for="puzzle-start">Start Word</label>
+                            <input type="text" id="puzzle-start" name="start"
+                                   value="GHOST" maxlength="5" required>
+
+                            <label for="puzzle-goal">Goal Word</label>
+                            <input type="text" id="puzzle-goal" name="goal"
+                                   value="CANDY" maxlength="5" required>
+
+                            <label for="puzzle-theme">Theme</label>
+                            <input type="text" id="puzzle-theme" name="theme"
+                                   value="Halloween" required>
+
+                            <label for="puzzle-steps">Number of Steps</label>
+                            <input type="number" id="puzzle-steps" name="steps"
+                                   value="5" min="1" required>
+
+                            <button type="submit" class="button primary-button">
+                                Submit Puzzle
+                            </button>
+
+                            <button type="button" id="cancel-puzzle" class="reset-button">
+                                Cancel
+                            </button>
+
+                            <p id="add-puzzle-message" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- This empty space keeps the puzzle card centered on the page. -->
+            <div class="layout-space"></div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-logo">HoliDaily</a>
+        <p>One holiday. One puzzle. A new challenge every day.</p>
+        <p class="copyright">&copy; 2026 HoliDaily. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
