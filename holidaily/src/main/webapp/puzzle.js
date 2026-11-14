@@ -8,6 +8,13 @@ const message = document.getElementById("game-message");
 const attemptCounter = document.getElementById("attempt-counter");
 const resetButton = document.getElementById("reset-game");
 
+//for adding the puzzle
+const addPuzzleButton = document.getElementById("add-puzzle");
+const addPuzzleContainer = document.getElementById("add-puzzle-container");
+const addPuzzleForm = document.getElementById("add-puzzle-form");
+const cancelPuzzleButton = document.getElementById("cancel-puzzle");
+const addPuzzleMessage = document.getElementById("add-puzzle-message");
+
 let currentRow = 0;
 let attempts = 0;
 let gameComplete = false;
@@ -185,3 +192,64 @@ resetButton.addEventListener("click", function() {
 
 // Start with one empty answer row.
 createAnswerRow();
+
+// Open the Add Puzzle popup.
+addPuzzleButton.addEventListener("click", function() {
+    addPuzzleContainer.hidden = false;
+    addPuzzleMessage.textContent = "";
+});
+
+// Close the popup.
+cancelPuzzleButton.addEventListener("click", function() {
+    addPuzzleContainer.hidden = true;
+});
+
+// Close popup when clicking outside the form.
+addPuzzleContainer.addEventListener("click", function(event) {
+    if (event.target === addPuzzleContainer) {
+        addPuzzleContainer.hidden = true;
+    }
+});
+
+// Submit a new puzzle to the backend.
+addPuzzleForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    addPuzzleMessage.textContent = "Submitting puzzle...";
+    addPuzzleMessage.style.color = "#333";
+
+    const formData = new FormData(addPuzzleForm);
+
+    try {
+        const response = await fetch("/holidaily/api/tools/addpuzzle", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            addPuzzleMessage.textContent = "Puzzle added successfully!";
+            addPuzzleMessage.style.color = "#38866a";
+        } else {
+            addPuzzleMessage.textContent =
+                result.error || "Unable to add puzzle.";
+            addPuzzleMessage.style.color = "#b34b4b";
+        }
+
+    } catch (error) {
+        console.error("Add Puzzle Error:", error);
+
+        addPuzzleMessage.textContent =
+            "Something went wrong. Check the browser console.";
+        addPuzzleMessage.style.color = "#b34b4b";
+    }
+});
+
+console.log("Puzzle.js loaded!");
+
+console.log("Add Puzzle button:", addPuzzleButton);
+console.log("Popup container:", addPuzzleContainer);

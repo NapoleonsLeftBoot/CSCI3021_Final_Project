@@ -95,6 +95,42 @@
                     <button type="button" id="reset-game" class="reset-button">
                         Reset Puzzle
                     </button>
+                    <button type="button" id="add-puzzle" class="button primary-button">
+                        Add Puzzle
+                    </button>
+
+                    <!-- Add Puzzle Form ** -->
+                    <div id="add-puzzle-container" class="add-puzzle-container" hidden>
+                        <form id="add-puzzle-form">
+                            <h3>Create a New Puzzle</h3>
+
+                            <label for="puzzle-start">Start Word</label>
+                            <input type="text" id="puzzle-start" name="start"
+                                   value="GHOST" maxlength="5" required>
+
+                            <label for="puzzle-goal">Goal Word</label>
+                            <input type="text" id="puzzle-goal" name="goal"
+                                   value="CANDY" maxlength="5" required>
+
+                            <label for="puzzle-theme">Theme</label>
+                            <input type="text" id="puzzle-theme" name="theme"
+                                   value="Halloween" required>
+
+                            <label for="puzzle-steps">Number of Steps</label>
+                            <input type="number" id="puzzle-steps" name="steps"
+                                   value="5" min="1" required>
+
+                            <button type="submit" class="button primary-button">
+                                Submit Puzzle
+                            </button>
+
+                            <button type="button" id="cancel-puzzle" class="reset-button">
+                                Cancel
+                            </button>
+
+                            <p id="add-puzzle-message" aria-live="polite"></p>
+                        </form>
+                    </div>
                 </div>
             </section>
 
