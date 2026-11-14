@@ -5,7 +5,8 @@
 We chose to work MySQL as our database tool because we were familiar with the tool from using it previously in other classes and projects. 
 
 *Schema:*
-![][image1]
+<img width="1394" height="650" alt="schema" src="https://github.com/user-attachments/assets/018ea159-5401-4014-93b7-40a5e8d73e85" />
+
 
 *Running the Backend*
 
