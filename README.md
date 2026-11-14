@@ -38,7 +38,7 @@ Cristian Gonzalez
 	I worked on creating the database and its tables along with the DAO,Model, and DBUtil java files required for working with the tables in java (with the exception of the agentic DAO and Model). Additionally, I worked on the servlets which include the DictionaryCheck, ProfanityCheck, Login, and AddUserPuzzle servlets. Finally, I created the schema for the database, showing every current table and the relations between them. 
 
 Madeleine Stamp  
-	I worked on the agentic AI setup, researching our initial choice of DeepSeek and determining that it did not meet our specific needs as well as we had originally anticipated. After researching alternatives, I decided to switch to Gemini and successfully implemented and tested the API round trip. I also documented the setup process in the README, including API key configuration and environment variable setup for both Windows and Linux.
+	I worked on the agentic AI setup, researching our initial choice of DeepSeek and determining that it did not meet our specific needs as well as we had originally anticipated. After researching alternatives, I decided to switch to Gemini and successfully implemented and tested the API round trip.
 
 *AI Tool Disclosure*
 None at this time.  
